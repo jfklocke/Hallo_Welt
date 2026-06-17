@@ -105,6 +105,12 @@ document.addEventListener("keydown", e => {
 });
 
 function gameLoop() {
+       // Noch nicht gestartet
+    if (dx === 0 && dy === 0) {
+        draw();
+        return;
+    }
+
     const head = {
         x: snake[0].x + dx,
         y: snake[0].y + dy
