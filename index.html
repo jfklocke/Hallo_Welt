@@ -184,10 +184,18 @@ function draw() {
     });
 }
 
-function gameOver() {
+
+ function gameOver() {
+
+    dataLayer.push({
+        event: "snake_game_over",
+        score: score
+    });
+
     alert("Game Over! Punkte: " + score);
     location.reload();
 }
+
 
 randomFood();
 draw();
