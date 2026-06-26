@@ -76,13 +76,20 @@ let food = {
 let dx = 0;
 let dy = 0;
 let score = 0;
-
+let gameStarted = false;
 function randomFood() {
     food.x = Math.floor(Math.random() * tileCount);
     food.y = Math.floor(Math.random() * tileCount);
 }
 
 document.addEventListener("keydown", e => {
+    if (!gameStarted) {
+    gameStarted = true;
+
+    dataLayer.push({
+        event: "snake_start"
+    });
+}
     switch (e.key) {
         case "ArrowUp":
             if (dy === 0) {
